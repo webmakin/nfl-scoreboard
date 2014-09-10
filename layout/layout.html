@@ -1,0 +1,17 @@
+<template name="layout">
+  <div class="container">
+    {{> nav}}  
+    {{> yield}}
+  </div>
+</template>
+
+<template name="nav">
+    <div class="navbar">
+      <div class="navbar-inner">
+      <a class="brand" href="#">Live Scoreboard</a>
+      <ul class="nav">
+      <li><a href="{{pathFor 'scoreboard'}}">Home</a></li>
+      </ul>
+      </div>
+    </div>
+</template>

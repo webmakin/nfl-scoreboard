@@ -1,0 +1,44 @@
+<template name="scoreboard">
+  <h1>NFL Season 2014 Week 1</h1>
+  <div class="scoreboard">
+    <div class="res">
+    {{#each result}}
+      {{> game}}
+    {{/each}}
+    <!-- {{result}} -->
+    </div>
+  </div>
+
+</template>
+
+<template name="game">
+ <div class="row">
+ <div class="span9">
+ <a href="{{this.id}}">
+    <div class="well">
+
+      <div class="row">
+        <div class="span3">
+        <p> Home Team:  {{this.home_team.name}} </p>
+        <p> Market: {{this.home_team.market}} </p>
+        <p> Points: {{this.home_team.points}} </p>
+        </div>
+
+         <div class="span2">
+         <h4>VS</h4>
+         </div>
+
+        <div class="span3">
+        <p> Away Team:  {{this.away_team.name}} </p>
+        <p> Market: {{this.away_team.market}} </p>
+        <p> Points: {{this.away_team.points}} </p>
+        </div>
+      </div>
+
+    </div>
+  </a>
+  </div>
+  </div>
+</template>
+
+

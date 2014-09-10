@@ -1,0 +1,70 @@
+<template name="fullBoard">
+	<div class="fullBoard">
+		<p>
+		Match Between 
+		<strong>Home Team:</strong> {{result.home_team.name}} VS <strong>AwayTeam:</strong> {{result.away_team.name}}
+		<br>
+  		<strong>Scheduled:</strong> {{result.scheduled}}
+  		<br>
+  		<strong>Completed:</strong> {{result.completed}}
+  		<br>
+  		<strong>Quarter:</strong> {{result.quarter}}
+  		<br>
+  		<strong>Completed:</strong> {{result.completed}}
+   		</p>
+
+   		<div class="row">
+   		<div class="span5 well">
+   		<h2>{{result.home_team.market}} {{result.home_team.name}}</h2> <h2>Points : {{result.home_team.points}}</h2>
+   		<p>
+   		Remaining challenges: {{result.home_team.remaining_challenges}} <br>
+   		Remaining timeouts: {{result.home_team.remaining_timeouts}}
+   		</p>
+   			<table class="table table-striped">
+              <thead>
+                <tr>
+                  <!-- <th>#</th> -->
+                  <th>Quarter</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each result.home_team.scoring}}
+                {{> score}}
+              {{/each}}
+
+              </tbody>
+            </table>
+         </div>
+         <div class="span5 well">
+         <h2>{{result.away_team.market}} {{result.away_team.name}}</h2> <h2>Points : {{result.away_team.points}}</h2>
+         <p>
+   		Remaining challenges: {{result.away_team.remaining_challenges}} <br>
+   		Remaining timeouts: {{result.away_team.remaining_timeouts}}
+   		</p>
+   			<table class="table table-striped">
+              <thead>
+                <tr>
+                  <!-- <th>#</th> -->
+                  <th>Quarter</th>
+                  <th>Points</th>
+                </tr>
+              </thead>
+              <tbody>
+              {{#each result.away_team.scoring}}
+                {{> score}}
+              {{/each}}
+              </tbody>
+            </table>
+         </div>
+         </div>
+
+   </div>
+</template>
+
+<template name="score">
+<tr>
+  <td>{{this.quarter}}</td>
+  <td>{{this.points}}</td>
+</tr>
+</template>
